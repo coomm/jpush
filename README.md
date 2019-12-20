@@ -25,10 +25,11 @@ $di->jpush = function() {
 ```php
 // 这只是使用样例,不应该直接用于实际生产环境中 !!
 
-$push_payload = \PhalApi\DI()->jpush->push()
+$push_payload = \PhalApi\DI()->jpush->client->push()
     ->setPlatform('all')
     ->addAllAudience()
-    ->setNotificationAlert('Hi, JPush');
+    ->setNotificationAlert('Hi, JPush')
+	->validate();
 ```
 
 
